@@ -1,0 +1,229 @@
+/* global */
+
+@font-face {
+  font-family: "Golos Text";
+  src: url("../fonts/GolosText-Regular.woff2") format("woff2"),
+    url("../fonts/GolosText-Regular.woff") format("woff");
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Golos Text";
+  src: url("../fonts/GolosText-Medium.woff2") format("woff2"),
+    url("../fonts/GolosText-Medium.woff") format("woff");
+  font-display: swap;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Golos Text";
+  src: url("../fonts/GolosText-SemiBold.woff2") format("woff2"),
+    url("../fonts/GolosText-SemiBold.woff") format("woff");
+  font-display: swap;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Golos Text";
+  src: url("../fonts/GolosText-Bold.woff2") format("woff2"),
+    url("../fonts/GolosText-Bold.woff") format("woff");
+  font-display: swap;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url("../fonts/Merriweather-Regular.woff2") format("woff2"),
+    url("../fonts/Merriweather-Regular.woff") format("woff");
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"),
+    url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-display: swap;
+  font-weight: 500;
+}
+
+:root {
+  --gap: 20px;
+  --color-red: #f54932;
+  --color-black: #1f1f1f;
+  --color-light-black: #313131;
+  --color-gray: #d6d6d6;
+  --color-yellow: #fbce51;
+  --color-blue: #3057a2;
+  --color-pearl-bush: #e9ded4;
+  --font-family: "Golos Text", sans-serif;
+  --second-family: "Merriweather", sans-serif;
+  --third-family: "Montserrat", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Golos Text";
+  color: var(--color-light-black);
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1262px;
+}
+
+.margin-reset {
+  margin: 0;
+}
+
+/* header */
+
+.header {
+  padding: 26px 0;
+  background-image: url("../img/header-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header__logo {
+  padding-bottom: 59px;
+}
+
+.header__title {
+  margin-bottom: 24px;
+  width: 50%;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: #313131;
+}
+
+.header__title-middle {
+  padding-left: 91px;
+}
+
+.header__title-bottom {
+  padding-left: 34px;
+}
+
+.header__descr {
+  padding-right: 70px;
+  width: 50%;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  text-align: center;
+  color: #313131;
+}
+.header__links {
+}
+.header__link {
+}
+.btn {
+}
+.header__marquee {
+}
+.masquee {
+}
+.marquee__round {
+}
+.main {
+}
+.support {
+}
+.support__top {
+}
+.support__title {
+}
+.support__title_accent {
+}
+.support__top-img {
+}
+.support__bottom {
+}
+.support__bottom-img {
+}
+.support__descr {
+}
+.support__list {
+}
+.support__item {
+}
+.__item-caption {
+}
+.support__item-value {
+}
+.support__question {
+}
+.transform {
+}
+.title {
+}
+.transform__title-descr {
+}
+.transform__list {
+}
+.transform__item {
+}
+.participants {
+}
+.participants__title {
+}
+.participants__slider {
+}
+.participants__item {
+}
+.participants__item-img {
+}
+.participants__item-title {
+}
+.participants__item-descr {
+}
+.participants__item-link {
+}
+.participants__selectors {
+}
+.participants__btn {
+}
+.selectors-btn {
+}
+.participants__selectors-number-active {
+}
+.participants__selectors-slash {
+}
+.participants__selectors-numbers-all {
+}
+.footer {
+}
+.footer__marquee {
+}
+.footer__descr {
+}
