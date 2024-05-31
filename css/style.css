@@ -50,6 +50,7 @@
 
 :root {
   --gap: 20px;
+  --color-white: #fff;
   --color-red: #f54932;
   --color-black: #1f1f1f;
   --color-light-black: #313131;
@@ -82,7 +83,7 @@ img {
 }
 
 body {
-  font-family: "Golos Text";
+  font-family: var(--font-family);
   color: var(--color-light-black);
 }
 
@@ -102,13 +103,45 @@ body {
   margin: 0;
 }
 
+.btn {
+  border-radius: 66px;
+  padding: 20px;
+  width: 263px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.masquee {
+  align-items: center;
+  padding: 0 12px;
+  height: 60.5px;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background-color: var(--color-red);
+}
+
+.flex {
+  display: flex;
+}
+
 /* header */
 
 .header {
-  padding: 26px 0;
+  padding: 26px 0 128px;
   background-image: url("../img/header-img.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.header__content {
+  width: 542px;
 }
 
 .header__logo {
@@ -117,7 +150,6 @@ body {
 
 .header__title {
   margin-bottom: 24px;
-  width: 50%;
   font-family: var(--second-family);
   font-weight: 400;
   font-size: 60px;
@@ -135,26 +167,56 @@ body {
 }
 
 .header__descr {
-  padding-right: 70px;
-  width: 50%;
+  padding-bottom: 38px;
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
   text-align: center;
   color: #313131;
 }
+
 .header__links {
+  justify-content: space-between;
 }
+
 .header__link {
+  display: inline-block;
 }
-.btn {
+
+.header__link:first-child {
+  padding: 15px 35px;
+  background-color: var(--color-black);
+  transition-property: border, color, background-color;
+  transition: 0.5s ease-in-out;
 }
-.header__marquee {
+
+@media (hover: hover) {
+  .header__link:first-child:hover {
+    border: none;
+    color: var(--color-black);
+    background-color: var(--color-yellow);
+    transition-property: border, color, background-color;
+    transition: 0.3s ease-in-out;
+  }
 }
-.masquee {
+
+.header__link:last-child {
+  padding: 15px 45px;
+  border: 2px solid var(--color-black);
+  color: var(--color-black);
+  background-color: transparent;
+  transition: 0.5s ease-in-out;
 }
-.marquee__round {
+
+@media (hover: hover) {
+  .header__link:last-child:hover {
+    color: var(--color-white);
+    background-color: var(--color-black);
+    transition-property: color, background-color;
+    transition: 0.3s ease-in-out;
+  }
 }
+
 .main {
 }
 .support {
