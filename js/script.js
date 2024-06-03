@@ -1,4 +1,28 @@
 const supportContainer = document.querySelector(".support__container");
+const transformList = document.querySelector(".transform__list");
+const transformBtnRight = document.querySelector(
+  ".transform__toolbar-item-right"
+);
+const transformBtnLeft = document.querySelector(
+  ".transform__toolbar-item-left"
+);
+const transformCircle1 = document.querySelector(
+  ".transform__toolbar-item-circle-1"
+);
+const transformCircle2 = document.querySelector(
+  ".transform__toolbar-item-circle-2"
+);
+const transformCircle3 = document.querySelector(
+  ".transform__toolbar-item-circle-3"
+);
+const transformCircle4 = document.querySelector(
+  ".transform__toolbar-item-circle-4"
+);
+const transformCircle5 = document.querySelector(
+  ".transform__toolbar-item-circle-5"
+);
+
+console.log(transformList.scrollWidth);
 
 if (matchMedia) {
   let screen = window.matchMedia("(max-width:576px)");
@@ -102,3 +126,27 @@ function changes(screen) {
         `;
   }
 }
+
+transformCircle1.addEventListener("click", function (e) {
+  transformList.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+});
+
+transformCircle2.addEventListener("click", function (e) {
+  transformList.scrollTo({ top: 0, left: 355, behavior: "smooth" });
+});
+
+transformCircle3.addEventListener("click", function (e) {
+  transformList.scrollTo({ top: 0, left: 710, behavior: "smooth" });
+});
+
+transformCircle4.addEventListener("click", function (e) {
+  transformList.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+});
+
+transformCircle5.addEventListener("click", function (e) {
+  transformList.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+});
+
+// transformBtnLeft.addEventListener("click", function (e) {
+//   transformList. = 0;
+// });
