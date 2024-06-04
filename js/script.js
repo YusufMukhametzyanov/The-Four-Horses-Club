@@ -1,28 +1,6 @@
-const supportContainer = document.querySelector(".support__container");
-const transformList = document.querySelector(".transform__list");
-const transformBtnRight = document.querySelector(
-  ".transform__toolbar-item-right"
-);
-const transformBtnLeft = document.querySelector(
-  ".transform__toolbar-item-left"
-);
-const transformCircle1 = document.querySelector(
-  ".transform__toolbar-item-circle-1"
-);
-const transformCircle2 = document.querySelector(
-  ".transform__toolbar-item-circle-2"
-);
-const transformCircle3 = document.querySelector(
-  ".transform__toolbar-item-circle-3"
-);
-const transformCircle4 = document.querySelector(
-  ".transform__toolbar-item-circle-4"
-);
-const transformCircle5 = document.querySelector(
-  ".transform__toolbar-item-circle-5"
-);
+// matchMedia
 
-console.log(transformList.scrollWidth);
+const supportContainer = document.querySelector(".support__container");
 
 if (matchMedia) {
   let screen = window.matchMedia("(max-width:576px)");
@@ -127,26 +105,225 @@ function changes(screen) {
   }
 }
 
+// Функционал кнопок для слайдера с классом transform__list
+
+const transformList = document.querySelector(".transform__list");
+const transformBtnRight = document.querySelector(
+  ".transform__toolbar-item-right"
+);
+const transformBtnLeft = document.querySelector(
+  ".transform__toolbar-item-left"
+);
+const transformCircles = document.querySelectorAll(".transform__circle");
+const transformCircle1 = document.querySelector(
+  ".transform__toolbar-item-circle-1"
+);
+const transformCircle2 = document.querySelector(
+  ".transform__toolbar-item-circle-2"
+);
+const transformCircle3 = document.querySelector(
+  ".transform__toolbar-item-circle-3"
+);
+const transformCircle4 = document.querySelector(
+  ".transform__toolbar-item-circle-4"
+);
+const transformCircle5 = document.querySelector(
+  ".transform__toolbar-item-circle-5"
+);
+
+window.addEventListener("load", function (e) {
+  transformCircle1.style.backgroundColor = "#313131";
+  transformBtnLeft.style.backgroundColor = "rgba(49, 49, 49, 0.2)";
+});
+
+transformList.addEventListener("scroll", function (e) {
+  if (transformList.scrollLeft === 0) {
+    transformCircles.forEach((element) => {
+      element.style.backgroundColor = "#d9d9d9";
+    });
+    transformCircle1.style.backgroundColor = "#313131";
+    transformBtnLeft.style.backgroundColor = "rgba(49, 49, 49, 0.2)";
+  }
+});
+
+transformCircles.forEach((element) => {
+  element.addEventListener("click", function (e) {
+    if (element != transformCircle1) {
+      transformBtnLeft.style.backgroundColor = "#313131";
+    }
+  });
+});
+
+transformCircles.forEach((element) => {
+  element.addEventListener("click", function (e) {
+    if (element != transformCircle5) {
+      transformBtnRight.style.backgroundColor = "#313131";
+    }
+  });
+});
+
 transformCircle1.addEventListener("click", function (e) {
   transformList.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 });
 
 transformCircle2.addEventListener("click", function (e) {
-  transformList.scrollTo({ top: 0, left: 355, behavior: "smooth" });
+  transformList.scrollTo({
+    top: 0,
+    left: (transformList.scrollWidth / 100) * 20 + (20 / 100) * 20,
+    behavior: "smooth",
+  });
 });
 
 transformCircle3.addEventListener("click", function (e) {
-  transformList.scrollTo({ top: 0, left: 710, behavior: "smooth" });
+  transformList.scrollTo({
+    top: 0,
+    left: (transformList.scrollWidth / 100) * 40 + (20 / 100) * 40,
+    behavior: "smooth",
+  });
 });
 
 transformCircle4.addEventListener("click", function (e) {
-  transformList.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  transformList.scrollTo({
+    top: 0,
+    left: (transformList.scrollWidth / 100) * 60 + (20 / 100) * 60,
+    behavior: "smooth",
+  });
 });
 
 transformCircle5.addEventListener("click", function (e) {
-  transformList.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  transformList.scrollTo({
+    top: 0,
+    left: (transformList.scrollWidth / 100) * 80 + (20 / 100) * 80,
+    behavior: "smooth",
+  });
+  transformBtnRight.style.backgroundColor = "rgba(49, 49, 49, 0.2)";
 });
 
-// transformBtnLeft.addEventListener("click", function (e) {
-//   transformList. = 0;
-// });
+transformBtnRight.addEventListener("click", function (e) {
+  if (
+    transformList.scrollLeft <
+    (transformList.scrollWidth / 100) * 20 + (20 / 100) * 20
+  ) {
+    transformList.scrollTo({
+      top: 0,
+      left: (transformList.scrollWidth / 100) * 20 + (20 / 100) * 20,
+      behavior: "smooth",
+    });
+    transformCircles.forEach((element) => {
+      element.style.backgroundColor = "#d9d9d9";
+      transformCircles[1].style.backgroundColor = "#313131";
+    });
+    transformBtnLeft.style.backgroundColor = "#313131";
+  }
+  if (
+    transformList.scrollLeft >=
+      (transformList.scrollWidth / 100) * 20 + (20 / 100) * 20 &&
+    transformList.scrollLeft <
+      (transformList.scrollWidth / 100) * 40 + (20 / 100) * 40
+  ) {
+    transformList.scrollTo({
+      top: 0,
+      left: (transformList.scrollWidth / 100) * 40 + (20 / 100) * 40,
+      behavior: "smooth",
+    });
+    transformCircles.forEach((element) => {
+      element.style.backgroundColor = "#d9d9d9";
+      transformCircles[2].style.backgroundColor = "#313131";
+    });
+  }
+  if (
+    transformList.scrollLeft >=
+      (transformList.scrollWidth / 100) * 40 + (20 / 100) * 40 &&
+    transformList.scrollLeft <
+      (transformList.scrollWidth / 100) * 60 + (20 / 100) * 60
+  ) {
+    transformList.scrollTo({
+      top: 0,
+      left: (transformList.scrollWidth / 100) * 60 + (20 / 100) * 60,
+      behavior: "smooth",
+    });
+    transformCircles.forEach((element) => {
+      element.style.backgroundColor = "#d9d9d9";
+      transformCircles[3].style.backgroundColor = "#313131";
+    });
+  }
+  if (transformList.scrollLeft > (transformList.scrollWidth / 100) * 60) {
+    transformList.scrollTo({
+      top: 0,
+      left: (transformList.scrollWidth / 100) * 80 + (20 / 100) * 80,
+      behavior: "smooth",
+    });
+    transformCircles.forEach((element) => {
+      element.style.backgroundColor = "#d9d9d9";
+      transformCircles[4].style.backgroundColor = "#313131";
+    });
+    transformBtnRight.style.backgroundColor = "rgba(49, 49, 49, 0.2)";
+  }
+});
+
+transformBtnLeft.addEventListener("click", function (e) {
+  if (
+    transformList.scrollLeft >=
+      (transformList.scrollWidth / 100) * 20 + (20 / 100) * 20 &&
+    transformList.scrollLeft <
+      (transformList.scrollWidth / 100) * 40 + (20 / 100) * 40
+  ) {
+    transformList.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+    transformCircles.forEach((element) => {
+      element.style.backgroundColor = "#d9d9d9";
+      transformCircles[0].style.backgroundColor = "#313131";
+    });
+  }
+  if (
+    transformList.scrollLeft >=
+      (transformList.scrollWidth / 100) * 40 + (20 / 100) * 40 &&
+    transformList.scrollLeft <
+      (transformList.scrollWidth / 100) * 60 + (20 / 100) * 60
+  ) {
+    transformList.scrollTo({
+      top: 0,
+      left: (transformList.scrollWidth / 100) * 20 + (20 / 100) * 20,
+      behavior: "smooth",
+    });
+    transformCircles.forEach((element) => {
+      element.style.backgroundColor = "#d9d9d9";
+      transformCircles[1].style.backgroundColor = "#313131";
+    });
+  }
+  if (transformList.scrollLeft > (transformList.scrollWidth / 100) * 60) {
+    transformList.scrollTo({
+      top: 0,
+      left: (transformList.scrollWidth / 100) * 40 + (20 / 100) * 40,
+      behavior: "smooth",
+    });
+    transformCircles.forEach((element) => {
+      element.style.backgroundColor = "#d9d9d9";
+      transformCircles[2].style.backgroundColor = "#313131";
+    });
+  }
+  if (transformList.scrollLeft > (transformList.scrollWidth / 100) * 80) {
+    transformList.scrollTo({
+      top: 0,
+      left: (transformList.scrollWidth / 100) * 60 + (20 / 100) * 60,
+      behavior: "smooth",
+    });
+    transformCircles.forEach((element) => {
+      element.style.backgroundColor = "#d9d9d9";
+      transformCircles[3].style.backgroundColor = "#313131";
+    });
+    transformBtnRight.style.backgroundColor = "#313131";
+  }
+});
+
+transformCircles.forEach((element) => {
+  element.addEventListener("click", function (e) {
+    transformCircles.forEach((element) => {
+      element.style.backgroundColor = "#d9d9d9";
+    });
+    element.style.backgroundColor = "#313131";
+  });
+});

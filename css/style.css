@@ -454,8 +454,8 @@ body {
   margin-right: 16px;
 }
 
-.transform__toolbar-item:first-child .transform__toolbar-img-arrow {
-  transform: rotate(180deg) translate(50%, 50%);
+.transform__toolbar-item:first-child {
+  transform: rotate(180deg);
 }
 
 .transform__toolbar-item:nth-last-child(2) {
