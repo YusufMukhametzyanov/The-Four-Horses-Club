@@ -337,4 +337,26 @@
     right: 6px;
     bottom: 290px;
   }
+
+  .participants {
+    padding: 121px 0 101px;
+  }
+
+  .participants__slider {
+    row-gap: 40px;
+  }
+
+  .participants__btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .participants__btn:first-child {
+    margin-right: 8px;
+  }
+
+  .participants__item-img {
+    margin-bottom: 28px;
+    width: 72.9%;
+  }
 }
