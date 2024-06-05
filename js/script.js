@@ -105,7 +105,7 @@ function changes(screen) {
   }
 }
 
-// Функционал кнопок для слайдера с классом transform__list
+// Функционал кнопок для слайдера с классом .transform__list
 
 const transformList = document.querySelector(".transform__list");
 const transformBtnRight = document.querySelector(
@@ -143,6 +143,34 @@ transformList.addEventListener("scroll", function (e) {
     });
     transformCircle1.style.backgroundColor = "#313131";
     transformBtnLeft.style.backgroundColor = "rgba(49, 49, 49, 0.2)";
+  }
+
+  if (transformList.scrollLeft > (transformList.scrollWidth / 100) * 20) {
+    transformCircles.forEach((element) => {
+      element.style.backgroundColor = "#d9d9d9";
+      transformCircles[1].style.backgroundColor = "#313131";
+    });
+    transformBtnLeft.style.backgroundColor = "#313131";
+  }
+  if (transformList.scrollLeft > (transformList.scrollWidth / 100) * 40) {
+    transformCircles.forEach((element) => {
+      element.style.backgroundColor = "#d9d9d9";
+      transformCircles[2].style.backgroundColor = "#313131";
+    });
+  }
+  if (transformList.scrollLeft > (transformList.scrollWidth / 100) * 60) {
+    transformCircles.forEach((element) => {
+      element.style.backgroundColor = "#d9d9d9";
+      transformCircles[3].style.backgroundColor = "#313131";
+    });
+    transformBtnRight.style.backgroundColor = "#313131";
+  }
+  if (transformList.scrollLeft > (transformList.scrollWidth / 100) * 80) {
+    transformCircles.forEach((element) => {
+      element.style.backgroundColor = "#d9d9d9";
+      transformCircles[4].style.backgroundColor = "#313131";
+    });
+    transformBtnRight.style.backgroundColor = "rgba(49, 49, 49, 0.2)";
   }
 });
 
