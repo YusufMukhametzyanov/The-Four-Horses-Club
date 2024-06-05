@@ -180,6 +180,31 @@
     right: -76px;
     bottom: 210px;
   }
+
+  .transform__toolbar {
+    display: flex;
+  }
+
+  .participants__slider {
+    flex-direction: column;
+  }
+
+  .participants__selectors {
+    order: 1;
+    justify-content: center;
+  }
+
+  .participants__list {
+    --offset: 0;
+  }
+
+  .participants__item-title {
+    font-size: 24px;
+  }
+
+  .participants__item-descr {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -310,6 +335,6 @@
 
   .transform__img {
     right: 6px;
-    bottom: 226px;
+    bottom: 290px;
   }
 }
