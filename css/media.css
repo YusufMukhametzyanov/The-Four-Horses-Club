@@ -359,4 +359,12 @@
     margin-bottom: 28px;
     width: 72.9%;
   }
+
+  .footer {
+    padding: 0 0 58px;
+  }
+
+  .marquee {
+    height: 38.2px;
+  }
 }

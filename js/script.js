@@ -1,15 +1,41 @@
 // matchMedia
 
 const supportContainer = document.querySelector(".support__container");
+const participantsList = document.querySelector(".participants__list");
+const participantsBtnLeft = document.querySelector(".participants__btn-left");
+const participantsBtnRight = document.querySelector(".participants__btn-right");
 
 if (matchMedia) {
-  let screen = window.matchMedia("(max-width:576px)");
-  screen.addListener(changes);
-  changes(screen);
+  let screenSupport = window.matchMedia("(max-width:576px)");
+  screenSupport.addListener(changes);
+  changes(screenSupport);
 }
 
-function changes(screen) {
-  if (screen.matches) {
+if (matchMedia) {
+  let screenParticipantsSlider = window.matchMedia("(min-width: 768px)");
+  screenParticipantsSlider.addListener(changes2);
+  changes2(screenParticipantsSlider);
+}
+
+function changes2(screenParticipantsSlider) {
+  if (screenParticipantsSlider.matches) {
+    participantsList.addEventListener("scroll", function (e) {
+      if (participantsList.scrollLeft === 0) {
+        participantsBtnLeft.style.backgroundColor = "#d9d9d9";
+      }
+
+      if (
+        participantsList.scrollLeft >
+        (participantsList.scrollWidth / 100) * 40
+      ) {
+        participantsBtnRight.style.backgroundColor = "#d9d9d9";
+      }
+    });
+  }
+}
+
+function changes(screenSupport) {
+  if (screenSupport.matches) {
     supportContainer.innerHTML = `
     <div class="support__top flex">
               <h3 class="support__title margin-reset">
