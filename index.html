@@ -99,20 +99,24 @@
         <div class="participants__slider flex">
           <h2 class="participants__title title margin-reset">Участники турнира</h2>
           <div class="participants__selectors">
-            <label class="participants__btn participants__btn-left selectors-btn">
+            <label class="participants__btn participants__btn-left selectors-btn" for="participants__btn-left">
               <img class="pargicipant__btn-img" src="img/participant-btn-arrow.svg" role="button"
                 aria-label="Кнопка пролистать слайдер участников влево">
             </label>
-            <span class="participants__selectors-number-active">3</span>
+            <span class="participants__selectors-number-first">3</span>
             <span class="participants__selectors-slash">/</span>
-            <span class="participants__selectors-numbers-all">6</span>
-            <label class="participants__btn participants__btn-right selectors-btn">
+            <span class="participants__selectors-numbers-second">6</span>
+            <label class="participants__btn participants__btn-right selectors-btn" for="participants__btn-right">
               <img class="pargicipant__btn-img" src="img/participant-btn-arrow.svg" role="button"
                 aria-label="Кнопка пролистать слайдер участников вправо">
             </label>
           </div>
           <ul class="participants__list list-reset flex">
-            <li class="participants__item">
+            <input class="participants__input participants__input-left" id="participants__btn-left" type="radio"
+              name="participants__input-radio" aria-hidden="true">
+            <input class="participants__input participants__input-right" id="participants__btn-right" type="radio"
+              name="participants__input-radio" aria-hidden="true">
+            <li class="participants__item participants__item-first">
               <img class="participants__item-img" src="img/participans-item-img.jpg"
                 alt="Изображение участника турнира">
               <strong class="participants__item-title">Хозе-Рауль Капабланка</strong>

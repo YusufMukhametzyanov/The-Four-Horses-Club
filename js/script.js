@@ -4,6 +4,15 @@ const supportContainer = document.querySelector(".support__container");
 const participantsList = document.querySelector(".participants__list");
 const participantsBtnLeft = document.querySelector(".participants__btn-left");
 const participantsBtnRight = document.querySelector(".participants__btn-right");
+const participantsItemFirst = document.querySelector(
+  ".participants__item-first"
+);
+const participantsSelectorsNumberFirst = document.querySelector(
+  ".participants__selectors-number-first"
+);
+const participantsSelectorsNumberSecond = document.querySelector(
+  ".participants__selectors-numbers-second"
+);
 
 if (matchMedia) {
   let screenSupport = window.matchMedia("(max-width:576px)");
@@ -12,24 +21,38 @@ if (matchMedia) {
 }
 
 if (matchMedia) {
-  let screenParticipantsSlider = window.matchMedia("(min-width: 768px)");
+  let screenParticipantsSlider = window.matchMedia("(min-width: 769px)");
   screenParticipantsSlider.addListener(changes2);
   changes2(screenParticipantsSlider);
 }
 
 function changes2(screenParticipantsSlider) {
   if (screenParticipantsSlider.matches) {
-    participantsList.addEventListener("scroll", function (e) {
-      if (participantsList.scrollLeft === 0) {
-        participantsBtnLeft.style.backgroundColor = "#d9d9d9";
-      }
+    function participantsRightSlider() {
+      participantsItemFirst.style.marginLeft = "-100%";
+      participantsSelectorsNumberFirst.setAttribute("style", "opacity: 0.6");
+      participantsSelectorsNumberSecond.setAttribute("style", "opacity: 1");
+    }
+    function participantsLeftSlider() {
+      participantsItemFirst.style.marginLeft = "0";
+      participantsSelectorsNumberFirst.setAttribute("style", "opacity: 1");
+      participantsSelectorsNumberSecond.setAttribute("style", "opacity: 0.6");
+    }
 
-      if (
-        participantsList.scrollLeft >
-        (participantsList.scrollWidth / 100) * 40
-      ) {
-        participantsBtnRight.style.backgroundColor = "#d9d9d9";
-      }
+    setInterval(participantsRightSlider, 4000);
+    setInterval(participantsLeftSlider, 8000);
+
+    participantsBtnRight.addEventListener("click", function (e) {
+      participantsItemFirst.style.marginLeft = "-100%";
+      participantsSelectorsNumberFirst.setAttribute("style", "opacity: 0.6");
+
+      participantsSelectorsNumberSecond.setAttribute("style", "opacity: 1");
+    });
+    participantsBtnLeft.addEventListener("click", function (e) {
+      participantsItemFirst.style.marginLeft = "0";
+      participantsSelectorsNumberFirst.setAttribute("style", "opacity: 1");
+
+      participantsSelectorsNumberSecond.setAttribute("style", "opacity: 0.6");
     });
   }
 }
